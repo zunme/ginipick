@@ -1,0 +1,34 @@
+@charset "utf-8";
+body {
+    font-family: "AppleSDGothicNeo", sans-serif;
+    /*font-size:14px;*/
+    color:#231815;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+a {text-decoration: none;}
+a:hover {color:#000;}
+
+/* 여백 */
+.h5 {height:5px; padding:0; margin:0; clear:both;}
+.h10 {height:10px; padding:0; margin:0; clear:both;}
+.h20 {height:20px; padding:0; margin:0; clear:both;}
+.h30 {height:30px; padding:0; margin:0; clear:both;}
+.h40 {height:40px; padding:0; margin:0; clear:both;}
+.h50 {height:50px; padding:0; margin:0; clear:both;}
+.h60 {height:60px; padding:0; margin:0; clear:both;}
+.h70 {height:70px; padding:0; margin:0; clear:both;}
+.h80 {height:80px; padding:0; margin:0; clear:both;}
+.h90 {height:90px; padding:0; margin:0; clear:both;}
+.h100 {height:100px; padding:0; margin:0; clear:both;}
+.h110 {height:110px; padding:0; margin:0; clear:both;}
+.h120 {height:120px; padding:0; margin:0; clear:both;}
+
+:root {
+    --point:#efc4c4;
+    --default:#231815;
+}
+body {
+    overflow-x: hidden;
+}

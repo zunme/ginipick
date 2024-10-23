@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>지니픽 미디어</title>
+
+    <link type="text/css" href="../style/default.css" rel="stylesheet">
+    <link type="text/css" href="../style/common.css" rel="stylesheet">
+    <link type="text/css" href="../style/style.css" rel="stylesheet">
+
+    <script src="../script/jquery.1.12.0.min.js"></script>
+    <script src="../script/jquery.rwdImageMaps.min.js"></script>
+    <script src="../script/script.js"></script>
+
+</head>
+
+<body class="page__sign signup">
+    <a href="javascript:history.back()" class="btn-sign-back"></a>
+    <h1>
+        <img src="../img/logo.png" alt="ginipick" class="sign-logo view_only_pc">
+        <img src="../img/sign/mobile_logo.png" alt="ginipick" class="sign-logo view_only_mobile">
+    </h1>
+    <h2 class="sign-title ">회원가입</h2>
+
+    <div class="btn-tab">
+        <a href="javascript:;" class="active">개인회원</a>
+        <a href="javascript:;">기업회원</a>
+    </div>
+
+    <div class="signform">
+        <label class="input-label" for="id">아이디</label>
+        <div class="input-wrap">
+            <input type="text" placeholder="아이디 입력(6-20자) " class="inputStyle" id="id">
+            <button class="btn-confirm">중복확인</button>
+        </div>
+        <label class="input-label" for="pw">비밀번호</label>
+        <input type="password" placeholder="비밀번호 입력(숫자, 특수문자 포함 8-20자)"  class="inputStyle" id="pw">
+        <label class="input-label" for="pw_confirm">비밀번호 확인</label>
+        <input type="password" placeholder="비밀번호 재입력"  class="inputStyle" id="pw_confirm">
+
+        <label class="input-label" for="pw">이름</label>
+        <input type="text" placeholder="이름 또는 회사명을 입력해주세요."  class="inputStyle" id="pw">
+
+		  <label class="input-label" for="pw">핸드폰번호</label>
+        <input type="text" placeholder="핸드폰번호를 입력 해주세요"  class="inputStyle" id="pw">
+
+        <label class="input-label" for="pw">이메일</label>
+        <input type="text" placeholder="name@exaple.com"  class="inputStyle" id="pw">
+
+
+        <div class="link-btm signup">
+            <label class="label-check">
+                <input type="checkbox">
+                <i></i>
+                <span>이용약관 동의(필수)</span>
+            </label>
+
+            <label class="label-check">
+                <input type="checkbox">
+                <i></i>
+                <span>개인정보 수집 및 이용 동의(필수)</span>
+            </label>
+        </div>
+
+        <a href="javascript:;" class="btn-signin">회원가입</a>
+    </div>
+</body>
+
+</html>
