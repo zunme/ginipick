@@ -35,8 +35,6 @@ class AuthenticatedSessionController extends Controller
             return back()->withErrors([
                 'userid' => '아이디/비밀번호를 확인해주세요.',
             ])->onlyInput('userid');
-        }else if( !in_array ($user->user_type ,['admin','superadmin'])){
-            $credentials['domain_group_id'] = '1';
         }
 
         if (Auth::attempt($credentials)) {

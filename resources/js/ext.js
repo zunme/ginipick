@@ -26,11 +26,11 @@ Array.prototype._sortUp=function(ind){
 
 window.preloadershow = function(show){
 	var element = document.querySelector("#preloadshow")
-	if( show ) element.classList.remove("hiddenforce")
+	if( show ) element.classList.remove("hidden")
 	else {
 		setTimeout(() => {
 			var element = document.querySelector("#preloadshow")
-			element.classList.add("hiddenforce")   
+			element.classList.add("hidden")   
 		}, 200);
 	}
 }

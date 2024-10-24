@@ -2,10 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/phoneVerification', [UserController::class, 'hpcert']);
+Route::match(array('GET', 'POST'),'/checkplus/{result}', [UserController::class, 'checkPlusResult']);
+Route::get('/getHpVerified', [UserController::class, 'getHpVerified']);
+
 /*
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -1,47 +1,51 @@
+
 <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-slot:body>
+        <body class="page__sign"
+                x-data="{
+                    userid : '',
+                    password :'',
+                    login(e){
+                        if( !this.userid) alertcall('아이디를 입력해주세요')
+                        else if( !this.userid) alertcall('아이디를 입력해주세요')
+                    }
+                }"
+            >
+            <a href="javascript:history.back()" class="btn-sign-back"></a>
+            <h1>
+                <img src="/img/logo.png" alt="ginipick" class="sign-logo view_only_pc">
+                <img src="/img/sign/mobile_logo.png" alt="ginipick" class="sign-logo view_only_mobile">
+            </h1>
+            <h2 class="sign-title">로그인</h2>
+    
+            <form class="signform" method="post" action="/login">
+                @csrf
+                <div>
+                    <label class="input-label" for="id">아이디</label>
+                    <input type="text" name="userid" placeholder="아이디 입력" class="inputStyle" id="id" required x-model="userid">
+                    <x-input-error :messages="$errors->get('userid')" class="mt-2" />
+                </div>
+                <div class="">
+                    <label class="input-label" for="pw">비밀번호</label>
+                    <input type="password" name="password" placeholder="비밀번호 입력"  class="inputStyle" id="pw" required x-model="password">
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                </div>
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('아이디')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="text" name="userid" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
+                <div class="h60"></div>
+                <button class="btn-signin block w-full">로그인</button>
+                <a href="/register" class="btn-signup">회원가입</a>
+    
+                <div class="link-btm">
+                    <label class="label-check">
+                        <input type="checkbox" name="remember">
+                        <i></i>
+                        <span>로그인 정보 저장</span>
+                    </label>
+                    <!--
+                    <a href="javascript:;" class="btn-find">아이디·비밀번호 찾기</a>
+                    -->
+                </div>
+            </form>
+        </body>
+    </x-slot:body>
 </x-guest-layout>

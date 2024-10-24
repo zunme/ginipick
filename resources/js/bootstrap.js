@@ -48,3 +48,11 @@ axios.interceptors.response.use(
 	})
 );
 window.axios = axios;
+window.logout= function(){
+	axios.post('/logout').then(res=>{
+	   location.replace('/')
+	})
+}
+window.eventToAlpine = function (data){
+	window.dispatchEvent(new CustomEvent("toAlpine", {detail: data }));
+}

@@ -1,2 +1,1 @@
 import './alpine';
-import 'flowbite';

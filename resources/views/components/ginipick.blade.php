@@ -20,8 +20,9 @@
 
         <!-- swiper -->
         @livewireStyles
+        <!--
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/default.js'])
-        
+        -->
         <script type="module" src="http://dev.ginipick.com:8898/@@vite/client" data-navigate-track="reload"></script>
         <link rel="stylesheet" href="http://dev.ginipick.com:8898/resources/css/app.css" data-navigate-track="reload" />
         <script type="module" src="http://dev.ginipick.com:8898/resources/js/app.js" data-navigate-track="reload"></script>
@@ -29,8 +30,8 @@
         
     </head>
 
-    <body>
-        <x-navbar_old></x-navbar_old>
+    <body class="!pt-0">
+        <x-navbar></x-navbar>
         {{$slot}}
 
         <footer>
@@ -41,8 +42,8 @@
                 <a href="https://www.youtube.com/channel/UCuvpzT1iV9lkalQL4F0rJ9w" target="_blank"><img src="/img/ico_youtube.png" alt="youtube"></a>
             </div>
             <div class="link">
-                <a href="javascript:;">지니픽 이용약관</a>
-                <a href="/doc/privacy_ginipick.docx" class="active" download>개인정보처리방침</a>
+                <a href="javascript:window.dispatchEvent(new CustomEvent('term1-pop'));;">지니픽 이용약관</a>
+                <a href="javascript:window.dispatchEvent(new CustomEvent('term2-pop'));" class="active" download>개인정보처리방침</a>
                 <a href="javascript:;">법적고지 및 주의사항</a>
                 <a href="javascript:;">전자금융거래약관</a>
             </div>
@@ -60,6 +61,14 @@
                 <span>Copyright © GINIPICK All Rights Reserved.</span>
             </div>
         </footer>
+
+
+        <div id="preloadshow" class="hidden" style="background-color: rgb(55 65 81 / 0.5);position:fixed; top:0; bottom:0; left:0;right:0;z-index:999999">
+			<div class="loader_wrap"><span class="loader"></span></div>
+		</div>
+        @include("front.pop.terms")
+        @include("front.pop.personal")
+
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
 		@if (isset($scrpits))
