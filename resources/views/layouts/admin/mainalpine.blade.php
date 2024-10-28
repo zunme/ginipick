@@ -8,7 +8,7 @@
 	],
 	menus:[
 		{ hassub:false, icon:'fa-solid fa-house' , label:'HOME', link:'/djemals' , selected:false },
-		{ hassub:false, icon:'fa-solid fa-users', label:'회원관리' ,link:'/djemals/users', selected:false}, 
+		{ hassub:false, icon:'fa-solid fa-users', label:'회원관리' ,link:'/djemals/userv2', selected:false}, 
 		
 	],
 	menus_bottom:[

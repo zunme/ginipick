@@ -1,0 +1,36 @@
+.ql-editor img {
+    max-width:100%;
+}
+.ql-editor a.linkicon::before {
+    content:"\f0c1";
+    display: inline-block;
+    font-family: "Font Awesome 6 Free";;
+    font-weight: 900;
+    margin-right: 4px;
+    --tw-text-opacity: 1;
+    color: rgb(118 169 250 / var(--tw-text-opacity));
+}
+.pagewrap > span{
+    height: 30px;
+    min-width: 38px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid #aaa;*/
+    --bg-opacity: 1 !important;
+    background-color: rgb(229 231 235 / var(--bg-opacity)) !important;
+    cursor:pointer;
+}
+.pagewrap > span.current_page{
+    --bg-opacity: 1 !important;
+    background-color: rgb(96 165 250 / var(--bg-opacity)) !important;
+    --text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--text-opacity)) !important;
+    cursor: not-allowed;
+}
+.pagewrap > span.disabled{
+    color: rgb(55 65 81 / 0.9) !important;
+    background-color: rgb(55 65 81 / 0.6) !important;
+    cursor: not-allowed;
+}

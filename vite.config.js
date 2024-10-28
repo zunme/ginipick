@@ -15,6 +15,7 @@ export default defineConfig({
                 //'resources/css/admin.css',
                 'resources/js/app.js',
                 'resources/js/default.js',
+                'resources/js/defaultalpine.js',
             ],
             refresh: true,
         }),

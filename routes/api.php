@@ -13,6 +13,7 @@ Route::get('/user', function (Request $request) {
 Route::get('/user/checkid' , [UserController::class, 'checkId']);
 Route::middleware(['auth:sanctum','cache.headers:no_store'])->group(function () {
     Route::prefix('admin')->group(function () {
-        Route::get('/users', [AdmUser::class, 'list']);
+        Route::get('/users', [AdmUser::class, 'list'])->middleware(['permission:view_any_user']);
+        Route::post('/user', [AdmUser::class, 'store'])->middleware(['permission:create_user']);
     });
 });

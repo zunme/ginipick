@@ -1,9 +1,10 @@
-<x-admin.main>
+<x-admin-layout>
     <x-slot name="header">
-            {{ __('dashboard') }}
+        <div class="font-semibold text-lg text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </div>
     </x-slot>
-
-    <x-admin.section>
-        33
-    </x-admin.section>
-</x-admin.main>
+    <div>
+        234
+    </div>
+</x-admin-layout>

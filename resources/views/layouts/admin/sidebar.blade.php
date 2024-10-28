@@ -11,10 +11,12 @@
 					<template x-for="menu in menus">
 						<li class="min-w-[200px]">
 							<template x-if="menu.hassub === false">
-								<a x-bind:href="menu.link"
-								   x-bind:target="menu.target ? '_blank':'_self'"
-								class="flex items-center py-1.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
-								sidebar-toggle-collapse="">
+								<a 	x-bind:href="menu.link"
+									x-bind:target="menu.target ? '_blank':'_self'"
+									class="flex items-center py-1.5 px-4 text-base font-normal text-dark-500 rounded-lg hover:bg-gray-200 group transition-all duration-200"
+									sidebar-toggle-collapse=""
+									wire:navigate
+									>
 									<div class="mr-1">
 										<div class="w-[32px] h-[32px] bg-white shadow-lg shadow-gray-300  text-dark-700 reounded rounded-lg flex justify-center place-items-center"
 											 :class="{ 'bg-blue-100': menu.admin_omly , 'bg-red-300' : menu.selected }"
@@ -58,10 +60,11 @@
 										>
 										<template x-for="submenu in menu.sub">
 											<li>
-												<a x-bind:href="submenu.link"
-												   x-bind:target="submenu.target ? '_blank':'_self'"
+												<a 	x-bind:href="submenu.link"
+												   	x-bind:target="submenu.target ? '_blank':'_self'"
 													class="text-sm text-dark-500 rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"
 													:class="{'!text-red-600 !font-bold' : submenu.selected , '!text-black': !submenu.selected }"
+													wire:navigate
 												   >
 													<span class="" x-text="submenu.label"></span><span class="hidden">P</span>
 												</a>
