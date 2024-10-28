@@ -28,7 +28,15 @@
                     당신의 지금 이 순간<br>
                     아바타로 캡처하세요!
                 </p>
-                <a href="https://www.youtube.com/channel/UCuvpzT1iV9lkalQL4F0rJ9w" class="btn-common" target="_blank">
+                <a 
+                    @auth
+                    href="https://hugpu.ai"
+                    @endauth
+                    @guest
+                    onClick="alert('로그인 후 사용해주세요');"
+                    @endauth
+                    class="btn-common cursor-pointer" 
+                    target="_blank">
                     <span>체험하기</span>
                     <img src="/img/arrow_right_black.png" alt="">
                 </a>
@@ -46,7 +54,14 @@
             인간을 대체 할 수 있다는 AI 기술이 두렵기만 하신가요?
         </h3>
 
-        <a href="https://www.youtube.com/channel/UCuvpzT1iV9lkalQL4F0rJ9w" class="btn-common" target="_blank">
+        <a @auth
+            href="https://hugpu.ai"
+            @endauth
+            @guest
+            onClick="alert('로그인 후 사용해주세요');"
+            @endauth
+            class="btn-common cursor-pointer"  target="_blank"
+            >
             <span>체험하기</span>
             <img src="/img/arrow_right.png" alt="">
         </a>
@@ -166,7 +181,7 @@
     <div class="section5 maxWidthWrap">
         <ul>
             <li>
-                <a href="/pages/avatar.html">
+                <a href="/pages/avatar">
                     <img src="/img/section5_img1.jpg" alt="" class="section5_img pc">
                     <img src="/img/a.png" alt="" class="section5_img mo">
                     <button>
@@ -209,7 +224,7 @@
                     </div> -->
                     <img src="/img/arrow_down_mobile.png" alt="" class="arrow-down">
                 </div>
-                <a href="/pages/contents.html">
+                <a href="/pages/contents">
                     <img src="/img/section5_img2.jpg" alt="" class="section5_img pc">
                     <img src="/img/b.png" alt="" class="section5_img mo">
                     <button>
@@ -219,7 +234,7 @@
                 </a>
             </li>
             <li>
-                <a href="/pages/fashion.html">
+                <a href="/pages/fashion">
                     <img src="/img/section5_img3.jpg" alt="" class="section5_img pc">
                     <img src="/img/c.png" alt="" class="section5_img mo">
                     <button>
@@ -266,7 +281,7 @@
                     </div> -->
                     <img src="/img/arrow_down_mobile.png" alt="" class="arrow-down">
                 </div>
-                <a href="/pages/edu.html">
+                <a href="/pages/edu">
                     <img src="/img/section5_img4.jpg" alt="" class="section5_img pc">
                     <img src="/img/d.png" alt="" class="section5_img mo">
                     <button>
@@ -276,7 +291,7 @@
                 </a>
             </li>
             <li>
-                <a href="/pages/consulting.html">
+                <a href="/pages/consulting">
                     <img src="/img/section5_img5.jpg" alt="" class="section5_img pc">
                     <img src="/img/e.png" alt="" class="section5_img mo">
                     <button>

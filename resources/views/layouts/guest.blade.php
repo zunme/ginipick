@@ -20,15 +20,15 @@
 
         <!-- swiper -->
         @livewireStyles
-        <!--
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        -->
         
+        @vite(['resources/css/app.css', 'resources/js/app.js','resources/js/default.js'])
+        
+        <!--
         <script type="module" src="http://dev.ginipick.com:8898/@@vite/client" data-navigate-track="reload"></script>
         <link rel="stylesheet" href="http://dev.ginipick.com:8898/resources/css/app.css" data-navigate-track="reload" />
         <script type="module" src="http://dev.ginipick.com:8898/resources/js/app.js" data-navigate-track="reload"></script>
         <script type="module" src="http://dev.ginipick.com:8898/resources/js/default.js" data-navigate-track="reload"></script>
-        
+        -->
     </head>
     @isset($body)
         {{$body}}
@@ -56,6 +56,7 @@
         <div id="preloadshow" class="hidden" style="background-color: rgb(55 65 81 / 0.5);position:fixed; top:0; bottom:0; left:0;right:0;z-index:999999">
 			<div class="loader_wrap"><span class="loader"></span></div>
 		</div>
+
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     </body>
     @endif

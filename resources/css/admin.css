@@ -1,0 +1,49 @@
+@layer components {
+  .form-select {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-0 focus:border-gray-300 block w-full p-2;
+  }
+  .form-text-container > input.form-text {
+   @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-0 focus:border-gray-300 block w-full p-2;
+  }
+  .button-default{
+    @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800;
+  }
+  .button-green{
+    @apply text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800;
+  }
+  .button-xs{
+    @apply text-xs py-2;
+  }
+  .date-picker-root{
+   @apply ml-2
+  }
+  .date-picker-root .form-text-container.form-input--md.has-leading-addon.has-trailing-icon {
+      @apply flex items-center;
+  }
+  .date-picker-root .form-text-container.form-input--md.has-leading-addon.has-trailing-icon input{
+      @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-0 focus:border-gray-300;
+  }
+  .date-picker-root svg{
+      @apply w-4 mr-2;
+  }
+  .flatpickr-calendar{
+    @apply text-xs font-semibold;
+  }
+  .flatpickr-current-month {
+      @apply flex justify-center flex-row-reverse;
+  }
+}
+
+table{
+    border-collapse:collapse !important;
+}
+.input-footer-span , .input-header-span{
+    background-color : #fff;
+}
+.numInputWrapper{
+    width: 80px !important;
+}
+.numInputWrapper .numInput.cur-year{
+    text-align:left;
+    padding-left:16px;
+}

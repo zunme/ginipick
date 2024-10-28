@@ -20,14 +20,13 @@
 
         <!-- swiper -->
         @livewireStyles
-        <!--
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/default.js'])
-        -->
+        <!--
         <script type="module" src="http://dev.ginipick.com:8898/@@vite/client" data-navigate-track="reload"></script>
         <link rel="stylesheet" href="http://dev.ginipick.com:8898/resources/css/app.css" data-navigate-track="reload" />
         <script type="module" src="http://dev.ginipick.com:8898/resources/js/app.js" data-navigate-track="reload"></script>
         <script type="module" src="http://dev.ginipick.com:8898/resources/js/default.js" data-navigate-track="reload"></script>
-        
+        -->
     </head>
 
     <body class="!pt-0">

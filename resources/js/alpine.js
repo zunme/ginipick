@@ -1,18 +1,21 @@
-import { Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
+import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
+/*
 import Alpine from 'alpinejs';
 import persist from '@alpinejs/persist'
 import mask from '@alpinejs/mask'
 import collapse from '@alpinejs/collapse'
 import morph from '@alpinejs/morph'
 import focus from '@alpinejs/focus'
+*/
 import intersect from '@alpinejs/intersect'
 import resize from '@alpinejs/resize'
-
+/*
 Alpine.plugin(mask)
 Alpine.plugin(persist)
 Alpine.plugin(collapse)
 Alpine.plugin(morph)
 Alpine.plugin(focus)
+*/
 Alpine.plugin(resize)
 Alpine.plugin(intersect)
 

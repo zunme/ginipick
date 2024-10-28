@@ -5,13 +5,14 @@ export default defineConfig({
     server: {
         hmr: {
           host: 'dev.ginipick.com',
-          //port: '5174',
+          //port: '6001',
         }
     },
     plugins: [
         laravel({
             input: [
                 'resources/css/app.css',
+                //'resources/css/admin.css',
                 'resources/js/app.js',
                 'resources/js/default.js',
             ],

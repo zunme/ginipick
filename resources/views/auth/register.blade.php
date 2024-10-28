@@ -7,6 +7,7 @@
             tel : '{{old('tel')}}',
             dupcheck : false,
             certpop(){
+                console.log( this.auth_id)
                 if( !this.auth_id  ) fnCheckplusPopup()
                 //else alert( '이미 전화번호 인증을 완료하셨습니다.') 
             },

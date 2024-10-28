@@ -1,6 +1,7 @@
 import Toastify from 'toastify-js';
 import Swiper from 'swiper/bundle';
 window.Swiper = Swiper
+window.Toastify = Toastify;
 
 const alertcall = function(text){
 		Toastify({
