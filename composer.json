@@ -4,8 +4,15 @@
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/animena/laravel-form-components.git"
+        }
+    ],
     "require": {
         "php": "^8.2",
+        "blade-ui-kit/blade-ui-kit": "^0.6.2",
         "filament/notifications": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/sanctum": "^4.0",

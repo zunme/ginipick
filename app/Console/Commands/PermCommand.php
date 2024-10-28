@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\PromptsForMissingInput;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PermCommand extends Command implements PromptsForMissingInput
 {
@@ -34,10 +35,13 @@ class PermCommand extends Command implements PromptsForMissingInput
     {
         $perm_name = $this->argument('name');
         $perm_attr=['view_','view_any_','create_','update_','delete_','delete_any_'];
+        $admin_role = Role::where('name','admin')->first();
         foreach( $perm_attr as $attr){
             try{
-                Permission::create(['name' => $attr.$perm_name ]);
+                $perm = Permission::create(['name' => $attr.$perm_name ]);
                 if( $perm_name =='role') $user->givePermissionTo(  $attr.$perm_name );
+                $admin_role->givePermissionTo([$perm]);
+
                 $this->info( "create : ". $attr.$perm_name);
             }catch( \Exception $e){
                 $this->info( "error create : ". $attr.$perm_name);

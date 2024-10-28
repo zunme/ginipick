@@ -22,7 +22,7 @@ return [
     ],
     
     'role'=>[
-        'user',
+        'user','qna'
     ],
     'role_items'=>['view_','view_any_','create_','update_','delete_'],
     

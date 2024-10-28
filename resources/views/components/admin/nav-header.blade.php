@@ -88,27 +88,14 @@
 								window.echocon.channel('private-adminnoti.adm').listen('Admnoti', (event) => {
 									console.log( self.notification )
 									console.log( event )
-									@if( in_array( \Auth::user()->user_type , ['admin','superadmin']) )
-										self.notification.push( event )
-										this.homechage(event)
-									@else
-										if( event.data.domain_group_id = {{ \Auth::user()->domain_group_id }} ) {
-											self.notification.push( event )
-											this.homechage(event)
-										}
-									@endif
+									self.notification.push( event )
+									this.homechage(event)
 									if( !self.modalshow ) alertcall(event.data.title)
 								})
 								.listen('QnaChat', (event)=>{
 									var item = { 'type':'qna' , 'data' : event.data , 'target' : event.data.room_id }
 									if( window.opendQnaChatRoom == item.target ) return;
-									@if( in_array( \Auth::user()->user_type , ['admin','superadmin']) )
-										self.notification.push( item )
-									@else
-										if( event.data.domain_group_id = {{ \Auth::user()->domain_group_id }} ) {
-											self.notification.push( item )
-										}
-									@endif
+									self.notification.push( item )
 									if( !self.modalshow ) alertcall('1:1 문의')
 								});
 							},
