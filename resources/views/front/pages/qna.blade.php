@@ -31,10 +31,6 @@
         <div id="point1" class="point__ai">
             <div class="maxWidthWrap"
                 x-data="{
-                    list : [],
-                    init(){
-                        axios.get('/api/qna').then(res=>this.list=res.data)
-                    }
                 }"
                 >
 
