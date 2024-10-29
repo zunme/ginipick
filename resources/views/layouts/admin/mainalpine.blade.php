@@ -1,3 +1,7 @@
+ @php
+	$menuclass = new \App\Classes\MenuClass();
+	$menu = $menuclass->get();
+ @endphp
  x-data="{
 	open_menu :false,
 	show_menu : false,
@@ -6,11 +10,7 @@
 		{ icon:'fa-solid fa-users' , label:'회원', link:'/djemals/users'},
 		{ icon:'fa-solid fa-house' , label:'홈', link:'/', target:true},
 	],
-	menus:[
-		{ hassub:false, icon:'fa-solid fa-house' , label:'HOME', link:'/djemals' , selected:false },
-		{ hassub:false, icon:'fa-solid fa-users', label:'회원관리' ,link:'/djemals/userv2', selected:false}, 
-		
-	],
+	menus:{{ Js::from($menu) }},
 	menus_bottom:[
 		
 	],

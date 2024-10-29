@@ -49,8 +49,14 @@
         <div id="point1" class="point__ai" x-data="{
                 save(e){
                     if(confirm('작성하신 내용으로 문의하시겠습니까?')){
-                        alertcall('준비중입니다')
+                        axios.post('/api/contact', new FormData( e.target)).then( res=>{
+                            $refs.formref.reset();
+                            alertcall('문의 내용을 남겼습니다.')
+                        })
                     }
+                },
+                reset(){
+                    $refs.formref.reset();
                 }
             }">
             <div class="maxWidthWrap">
@@ -58,7 +64,7 @@
                     <h3>문의사항 작성</h3>
                     <span>개인/기업 모두 문의 가능합니다.</span>
                 </div>
-                <form class="table_contact" @submit.prevent="save(event)">
+                <form class="table_contact" @submit.prevent="save(event)" x-ref="formref">
                     <ul>
                         <li>
                             <p>
@@ -66,7 +72,7 @@
                                 <span class="essential">*</span>
                             </p>
                             <div class="box">
-                                <input type="text" placeholder="기업명을 입력하세요.">
+                                <input type="text" name="company" placeholder="기업명을 입력하세요." required>
                             </div>
                         </li>
                         <li>
@@ -75,7 +81,7 @@
                                 <span class="essential">*</span>
                             </p>
                             <div class="box">
-                                <input type="text" placeholder="김지니">
+                                <input type="text" name="name" placeholder="이름" required>
                             </div>
                         </li>
                         <li>
@@ -83,7 +89,7 @@
                                 <span>직책</span>
                             </p>
                             <div class="box">
-                                <input type="text" placeholder="기업명을 입력하세요.">
+                                <input type="text" name="position" placeholder="직책.">
                             </div>
                         </li>
                         <li>
@@ -92,7 +98,7 @@
                                 <span class="essential">*</span>
                             </p>
                             <div class="box">
-                                <input type="text" placeholder="연락처를 입력하세요.">
+                                <input type="text" name="tel" placeholder="연락처를 입력하세요." required>
                             </div>
                         </li>
                         <li>
@@ -101,7 +107,7 @@
                                 <span class="essential">*</span>
                             </p>
                             <div class="box">
-                                <input type="text" placeholder="JINIPICK@">
+                                <input type="email" name="email" placeholder="이메일" required>
                             </div>
                         </li>
                         <li>
@@ -110,19 +116,19 @@
                                 <span class="essential">*</span>
                             </p>
                             <div class="box">
-                                <select name="" id="">
-                                    <option value="">AI 아바타</option>
-                                    <option value="">아바타 친구</option>
-                                    <option value="">아바타 추모관</option>
-                                    <option value="">AI 영상</option>
-                                    <option value="">AI 작가</option>
-                                    <option value="">브랜드마케팅</option>
-                                    <option value="">마이크온오프</option>
-                                    <option value="">패션코디</option>
-                                    <option value="">에듀 큐레이터</option>
-                                    <option value="">투시 큐레이터ㅍ</option>
-                                    <option value="">라이프 큐레이터</option>
-                                    <option value="">CS지원서비스</option>
+                                <select name="service_type" required>
+                                    <option value="AI 아바타">AI 아바타</option>
+                                    <option value="아바타 친구">아바타 친구</option>
+                                    <option value="아바타 추모관">아바타 추모관</option>
+                                    <option value="AI 영상">AI 영상</option>
+                                    <option value="AI 작가">AI 작가</option>
+                                    <option value="브랜드마케팅">브랜드마케팅</option>
+                                    <option value="마이크온오프">마이크온오프</option>
+                                    <option value="패션코디">패션코디</option>
+                                    <option value="에듀 큐레이터">에듀 큐레이터</option>
+                                    <option value="투시 큐레이터">투시 큐레이터</option>
+                                    <option value="라이프 큐레이터">라이프 큐레이터</option>
+                                    <option value="CS지원서비스">CS지원서비스</option>
                                 </select>
                             </div>
                         </li>
@@ -132,11 +138,12 @@
                                 <span class="essential">*</span>
                             </p>
                             <div class="box">
-                                <textarea name="" id=""></textarea>
+                                <textarea name="content" required></textarea>
                                 <p class="subtext">문의 사항과 관련된 세부 정보나 이미지를 제공해 주시면, 더 신속하고 정확한 도움을 드릴 수 있습니다.</p>
                                 <div class="h20"></div>
                             </div>
                         </li>
+                        <!--
                         <li>
                             <p>
                                 <span>자유작성</span>
@@ -144,13 +151,14 @@
                             <div class="box">
                                 <input type="text" placeholder="제목">
                                 <div class="h20"></div>
-                                <textarea name="" id="" placeholder="내용"></textarea>
+                                <textarea name="" placeholder="내용"></textarea>
                             </div>
                         </li>
+                        -->
                     </ul>
                     <div class="agreeboxWrap">
                         <div class="agreebox">
-<pre>
+<pre class="overflow-x-hidden overflow-y whitespace-pre-wrap break-all">
     개인정보 취급 방침
     개인정보취급방침은 회원의 개인정보보호를 위하여 (주)지니픽이 실시하는 개인정보수집의 목적과 그 정보의 정책적, 시스템적 보안에 관한 규정이며, (주)지니픽 회원의 기본적인 사생활 비밀과 자유 및 통신비밀을 보장하고 정보유출로 인한 인권피해가 발생하지 않도록 하고자 마련된 것입니다.
     (주)지니픽은 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 아래와 같이 개인정보 취급방침을 수립 및 공개합니다. (주)지니픽은 개인정보 취급방침을 통하여 회원께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
@@ -234,12 +242,12 @@
 </pre>
                         </div>
                         <label class="py-4">
-                            <input type="checkbox" value="" class="!min-h-[inherit] !p-0 mr-2 w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-0 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                            <input type="checkbox" name="agree" value="Y" class="!min-h-[inherit] !p-0 mr-2 w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-0 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
                             <span>개인정보 수집 및 처리방침 동의</span>
                         </label>
                     </div>
                     <div class="btnbox">
-                        <button class="btn-cancel">취소</button>
+                        <button class="btn-cancel" type="button" @click="reset()">취소</button>
                         <button class="btn-submit btn-showPopup">제출</button>
                     </div>
                 </form>

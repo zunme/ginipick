@@ -29,7 +29,14 @@
         </section>
 
         <div id="point1" class="point__ai">
-            <div class="maxWidthWrap">
+            <div class="maxWidthWrap"
+                x-data="{
+                    list : [],
+                    init(){
+                        axios.get('/api/qna').then(res=>this.list=res.data)
+                    }
+                }"
+                >
 
                 <div id="accordion-collapse" 
                     data-accordion="collapse" 
@@ -37,35 +44,42 @@
                     data-inactive-Classes= "text-gray-500 border-b border-black"
                     class="mt-[80px]"
                     >
-                    @for( $i =0; $i <3; $i ++ )
-                    <h2 id="accordion-collapse-heading-{{$i}}">
+                    @php
+                            $data = \App\Models\Qna::select('*')->orderBy('sort_no','asc')->orderBy('id','desc')->get();
+                    @endphp
+                    @forelse ( $data as $item )
+                    <h2 id="accordion-collapse-heading-{{$item->id}}">
                         <button type="button" 
                             class="flex gap-3 items-center justify-between w-full py-3 pl-3 pr-8 font-medium text-gray-800 
                                 hover:bg-red-50 " 
-                            data-accordion-target="#accordion-collapse-body-{{$i}}" 
+                            data-accordion-target="#accordion-collapse-body-{{$item->id}}" 
                             aria-expanded="true" 
-                            aria-controls="accordion-collapse-body-{{$i}}">
-                          <div class="flex items-center gap-x-8 text-2xl">
+                            aria-controls="accordion-collapse-body-{{$item->id}}">
+                          <div class="flex items-start gap-x-8 text-2xl">
                               <span class="text-[28px] font-extrabold italic ">Q</span>
-                              <span class="font-extrabold text-gray-400">A/S문의</span>
-                              <span class="font-extrabold">A/S 신청은 어떻게 하면 되나요?</span>
+                              <span class="font-extrabold text-gray-400 min-w-[90px]">A/S문의</span>
+                              <span class="font-extrabold break-all text-wrap  text-left">{!! nl2br($item->q) !!}</span>
                           </div>
                           <i data-accordion-icon class="fa-solid fa-caret-up text-2xl rotate-180 shrink-0"></i>
                         </button>
                     </h2>
-                    <div id="accordion-collapse-body-{{$i}}" 
+                    <div id="accordion-collapse-body-{{$item->id}}" 
                         class="hidden" 
-                        aria-labelledby="accordion-collapse-heading-{{$i}}">
+                        aria-labelledby="accordion-collapse-heading-{{$item->id}}">
                         <div class="py-2 pl-8 pr-5 bg-red-50 border-b-2 border-black text-2xl flex items-start gap-x-4">
                             <i class="text-red-600">A</i>
-                            <div class="flex-grow">대표번호 0000-0000로 전화 주시거나, 홈페이지 문의사항을 통해 접수하시면 됩니다.</div>
+                            <div class="flex-grow overflow-x-hidden">
+                                <div class="text-wrap break-all text-left">{!! nl2br($item->a) !!}</div>
+                            </div>
                         </div>
                     </div>
-                    @endfor
+                    @empty
+                    <div></div>
+                    @endforelse
                   </div>
 
                 <p class="qna-text">더 궁금한 사항이 있으시면 24시 AI 상담사를 통해 문의 가능합니다.</p>
-                <a href="./contact.html" class="btn-submit w50">
+                <a href="/pages/contact" class="btn-submit w50">
                     AI 상담
                 </a>
             </div>

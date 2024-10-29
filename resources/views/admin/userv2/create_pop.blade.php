@@ -33,7 +33,7 @@
                 axios.post('/api/admin/user' , new FormData( e.target) ).then( res=>{
                     alertcall('생성하였습니다.')
                     window.dispatchEvent(new CustomEvent('users_reload'))
-                    closeModal()
+                    this.closeModal()
                 })
             }
         },

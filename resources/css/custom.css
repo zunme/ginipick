@@ -150,3 +150,11 @@ input.disable-arrow::-webkit-inner-spin-button {
 input.disable-arrow[type='number'] {
   -moz-appearance: textfield;
 }
+select.disable-arrow {
+    -webkit-appearance: none !important;  /* 크롬 화살표 없애기 */
+    -moz-appearance: none !important; /* 파이어폭스 화살표 없애기 */
+    appearance: none !important;  /* 화살표 없애기 */
+    display: inline-block;
+    border: 1px solid #dbdbdb;
+    width: 100%;
+}

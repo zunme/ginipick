@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
         "livewire/volt": "^1.6",
+        "mkocansey/bladewind": "^2.7",
         "power-components/livewire-powergrid": "^6.0",
         "spatie/laravel-permission": "^6.9",
         "tallstackui/tallstackui": "^1.35"

@@ -5,6 +5,8 @@
 		@if (isset($styles))
 			{{ $styles }}
 		@endif
+		
+		
 		<script>
 			let windowpusher = null;
 			let opendQnaChatRoom = -1;
@@ -67,13 +69,13 @@
 		<script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
+		
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
 		@if (isset($scripts))
 			{{ $scripts }}
 		@endif
-        
+        <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
         @livewireScriptConfig 
     </body>
 </html>

@@ -13,8 +13,11 @@ Route::middleware('auth')->group(function () {
         return view('admin.userv2.index');
     })->name('user2')->middleware(['permission:view_any_user']);
     Route::get('/qna', function () {
-        return view('admin.userv2.index');
-    })->name('user2')->middleware(['permission:view_any_qna']);
+        return view('admin.qna.index');
+    })->name('qna')->middleware(['permission:view_any_qna']);
+    Route::get('/contact', function () {
+        return view('admin.contact.index');
+    })->name('contact')->middleware(['permission:view_any_qna']);
     Route::get('/role', function () {
         return view('admin.users.role');
     })->name('role')->middleware(['permission:view_any_role|view_role']);

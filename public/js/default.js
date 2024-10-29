@@ -1,4 +1,4 @@
-const daum_element_layer = document.getElementById('daumlayer');
+var daum_element_layer = document.getElementById('daumlayer');
 function closeDaum() {
     daum_element_layer.style.display = 'none';
 }

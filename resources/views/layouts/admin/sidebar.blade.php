@@ -26,7 +26,7 @@
 									</div>
 
 									<span class="ml-3 text-dark-500 text-sm  !overflow-y-hidden" 
-										  :class="{'!text-red-600 !font-bold' : menu.selected }"  
+										  :class="{'!text-red-500 !font-bold' : menu.selected }"  
 										  sidebar-toggle-item="" x-text="menu.label"></span>
 								</a>
 							</template>
@@ -39,14 +39,14 @@
 										x-bind:data-collapse-toggle="menu.id">
 										<div class="mr-1">
 											<div class="w-[32px] h-[32px] bg-white shadow-lg shadow-gray-300  text-dark-700 reounded rounded-lg flex justify-center place-items-center"
-												:class="{'bg-red-300' : menu.selected }"
+												:class="{'!bg-red-300 text-white' : menu.selected }"
 												 >
 												<i class="text-sm" :class="menu.icon"></i>
 											</div>
 										</div>
 
 										<span class="ml-3 text-dark-500 text-sm !overflow-y-hidden" 
-											  :class="{'!text-red-600 !font-medium' : menu.selected }"
+											  :class="{'!text-orange-500 !font-medium' : menu.selected }"
 											  sidebar-toggle-item="" x-text="menu.label"></span>
 										<svg sidebar-toggle-item="" class="w-4 h-4 ml-auto text-gray-700" fill="currentColor"
 											viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
 												<a 	x-bind:href="submenu.link"
 												   	x-bind:target="submenu.target ? '_blank':'_self'"
 													class="text-sm text-dark-500 rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"
-													:class="{'!text-red-600 !font-bold' : submenu.selected , '!text-black': !submenu.selected }"
+													:class="{'!text-red-500 !font-bold' : submenu.selected , '!text-black': !submenu.selected }"
 													wire:navigate
 												   >
 													<span class="" x-text="submenu.label"></span><span class="hidden">P</span>
@@ -94,7 +94,7 @@
 									</div>
 
 									<span class="ml-3 text-dark-500 text-sm  !overflow-y-hidden" 
-										  :class="{'!text-red-600 !font-bold' : menu.selected }"  
+										  :class="{'!text-red-500 !font-bold' : menu.selected }"  
 										  sidebar-toggle-item="" x-text="menu.label"></span>
 								</a>
 							</template>
@@ -114,7 +114,7 @@
 										</div>
 
 										<span class="ml-3 text-dark-500 text-sm !overflow-y-hidden" 
-											  :class="{'!text-red-600 !font-medium' : menu.selected }"
+											  :class="{'!text-red-500 !font-medium' : menu.selected }"
 											  sidebar-toggle-item="" x-text="menu.label"></span>
 										<svg sidebar-toggle-item="" class="w-4 h-4 ml-auto text-gray-700" fill="currentColor"
 											viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +131,7 @@
 												<a x-bind:href="submenu.link"
 												   x-bind:target="submenu.target ? '_blank':'_self'"
 													class="text-sm text-dark-500 rounded-lg flex items-center p-2 group hover:bg-gray-200 transition duration-75 pl-11"
-													:class="{'!text-red-600 !font-bold' : submenu.selected , '!text-black': !submenu.selected }"
+													:class="{'!text-red-500 !font-bold' : submenu.selected , '!text-black': !submenu.selected }"
 												   >
 													<span class="" x-text="submenu.label"></span><span class="hidden">P</span>
 												</a>
