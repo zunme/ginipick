@@ -75,7 +75,7 @@
 		@if (isset($scripts))
 			{{ $scripts }}
 		@endif
-        <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
+        <!--script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script -->
         @livewireScriptConfig 
     </body>
 </html>

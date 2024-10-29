@@ -20,10 +20,12 @@
                 <x-slot name="thead">
                     <tr>
                         <x-admin.th-b class="">#</x-admin.th-b>
+                        <x-admin.th-b class="">ID</x-admin.th-b>
                         <x-admin.th-b class="">NAME</x-admin.th-b>
                         <x-admin.th-b class="">TEL</x-admin.th-b>
                         <x-admin.th-b class="">TYPE</x-admin.th-b>
                         <x-admin.th-b class="">개인/법인</x-admin.th-b>
+                        <x-admin.th-b class="">메모</x-admin.th-b>
                         <x-admin.th-b class="">등록일</x-admin.th-b>
                     </tr>
                 </x-slot>
@@ -33,6 +35,11 @@
                             <x-admin.td-b>
                                 <input type="checkbox" name="ids[]" :value="row.id">
                                 <span x-text="row.id" class="hidden"></span>
+                            </x-admin.td-b>
+                            <x-admin.td-b x-text="row.userid" 
+                                class="text-blue-600 cursor-pointer"
+                                @click="eventToAlpine( {type:'userinfopop' ,user_id: row.id } )"
+                                >
                             </x-admin.td-b>
                             <x-admin.td-b x-text="row.name"></x-admin.td-b>
                             <x-admin.td-b>
@@ -44,7 +51,14 @@
                                 </template>
                             </x-admin.td-b>
                             <x-admin.td-b x-text="row.user_type"></x-admin.td-b>
+                            
                             <x-admin.td-b x-text="row.personality=='C'?'법인':'개인'"></x-admin.td-b>
+                            <x-admin.td-b>
+                                <div @click="eventToAlpine( {type:'userinfopop' ,user_id: row.id } )" class="cursor-pointer text-blue-400">
+                                    <i class="fa-solid fa-comment" x-show="row.memos && row.memos.length > 0"></i>
+                                    <i class="fa-solid fa-comment-slash" x-show="!row.memos || row.memos.length < 1"></i>
+                                </div>
+                            </x-admin.td-b>
                             <x-admin.td-b x-text="toDateTimeString(row.created_at)"></x-admin.td-b>
                         </tr>
                     </template>
@@ -53,4 +67,5 @@
         </x-alpine.pagenate-list>
     </div>
     @include('admin.userv2.create_pop')
+    @include('admin.userv2.info_pop')
 </x-admin-layout>

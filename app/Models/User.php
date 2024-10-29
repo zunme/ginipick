@@ -10,11 +10,13 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Spatie\Permission\Traits\HasRoles;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Auditable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasApiTokens, SoftDeletes, HasRoles;
+    use \OwenIt\Auditing\Auditable;
 
     /**
      * The attributes that are mass assignable.
@@ -51,6 +53,6 @@ class User extends Authenticatable
 
     public function memos()
     {
-        return $this->morphMany(Memo::class, 'memotag');
+        return $this->morphMany(Memo::class, 'memotag')->orderBy('id','desc');
     }
 }
