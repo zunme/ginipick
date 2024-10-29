@@ -27,7 +27,7 @@
             </div>
         </section>
 
-        <div class="subNavBar">
+        <div class="subNavBar top-[56px] md:top-[70px] lg:top-[94px]">
             <a href="#point1">AI 영상</a>
             <a href="#point2">AI 작가</a>
             <a href="#point3">브랜드마케팅</a>

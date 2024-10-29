@@ -43,7 +43,8 @@ new class extends Component
     public function save(){
         
         //throw new Exception ('ModelNotFoundException');
-
+        //$this->dispatch('notification', title: "New category create");
+        
         if( !\Auth::user() || \Auth::user()->can('view_role') == false ) {
             return redirect()->to('/');
         }

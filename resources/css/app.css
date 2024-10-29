@@ -7,7 +7,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+
     .image-bg{
         @apply block bg-cover bg-no-repeat bg-center bg-gray-50;
     }
@@ -50,4 +50,10 @@
     .flatpickr-current-month {
         @apply flex justify-center flex-row-reverse;
     }
-  }
+    .fi-color-danger{
+      @apply text-red-600;
+    }
+    .fi-color-success{
+      @apply text-green-600;
+    }
+  

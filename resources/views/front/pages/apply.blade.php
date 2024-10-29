@@ -40,7 +40,7 @@
             </div>
             <button class="btn-common dark view_only_mobile">
                 <span>전체보기</span>
-                <img src="../img/arrow_right.png" alt="">
+                <img src="../img/arrow_right.png" class="inline-block" alt="">
             </button>
 
             <div class="h100"></div>

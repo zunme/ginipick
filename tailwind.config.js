@@ -10,6 +10,9 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './vendor/filament/**/*.blade.php',
+        './vendor/danharrin/filament-blog/resources/views/**/*.blade.php',
+        
         './vendor/tallstackui/tallstackui/src/**/*.php', 
         "./node_modules/flowbite/**/*.js"
 
