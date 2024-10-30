@@ -1,23 +1,35 @@
 <?php
-namespace App\Classes;
 
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
-use Exception;
+namespace App\Livewire\Admin;
 
+use Livewire\Component;
 
-class MenuClass{
+class Sidemenu extends Component
+{
+    public $menus;
+    public $routename;
     protected $user;
-    public function __construct(){
-        
-    }
-    public function get(){
-        $menus = config('panel.menus_a');
+    public $current_id='';
+    public $parent_id='';
+
+    public function mount(){
         $this->user = \Auth::user();
-        $arr = array();
+        $this->routename = \Request::route()->getName();
+        $menu = [
+            [
+              'label'=>'Role',
+              'id'=>'role',
+              'route'=>'admin.role',
+              'icon'=>'fa-solid fa-shield-halved',
+            ]
+        ];
+        $menu = array_merge( config('panel.menus_a'), $menu);
+        $menu = $this->checkmenu( $menu );
+        if( !$menu ) $this->menus = [];
+        else $this->menus = $menu;
+
+    }
+    public function checkmenu($menus){
         foreach ( $menus as $menu){
             if( isset($menu['items']) ) {
                 $data = $this->checkgroup( $menu);
@@ -52,13 +64,23 @@ class MenuClass{
             $perm = true;
         }else $perm = $this->user->can('view_any_'. $menu['id']);
         if( !$perm ) return false;
+        $menu_id = 'menu_item_'.( isset($menu['id']) ? $menu['id'] : \Str::randon(10) );
+        if( $this->routename == $menu['route']) {
+            $this->current_id = $menu_id;
+            $this->parent_id = $parent_id;
+        }
         return [ 
                 'hassub'=>false, 
                 'icon'=>isset($menu['icon']) ? $menu['icon'] :'', 
                 'label'=>$menu['label'] ,
                 'link'=>route($menu['route'],[],false),
                 'parent_id'=>$parent_id,
+                'id'=>$menu_id,
                 'selected'=>false
             ];
+    }
+    public function render()
+    {
+        return view('livewire.admin.sidemenu');
     }
 }

@@ -87,17 +87,21 @@
 		</style>
     </head>
     <body class="font-applesd antialiased">
-		
-        <div class="min-h-screen bg-gray-100"
+      
+    <div class="min-h-screen bg-gray-100"
 				@include('layouts.admin.mainalpine')
 			 >
+       
 			<x-admin.nav-header>
 				@if(isset($navheader))
 				{{ $navheader }}
 				@endif
 			</x-admin.nav-header>
+      
 			<div class="flex overflow-hidden bg-white pt-16">
-				@include('layouts.admin.sidebar')
+        @persist('navbararea')
+          <livewire:admin.sidemenu />
+        @endpersist
 				<div class="fixed inset-0 z-10 bg-gray-900 opacity-50 hidden" id="sidebarBackdrop"></div>
 				<div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-hidden relative"
 					 :class="{'ml-64':(open_menu),'ml-16':(!open_menu)}"
@@ -116,9 +120,16 @@
 					</main>
 				</div>
 			</div>
-        </div>
+    </div>
 		
-		
+
+		<!-- pop -->
+    @persist('poparea')
+      @include('admin.userv2.create_pop')
+      @include('admin.userv2.info_pop')
+    @endpersist
+    <!-- /pop -->
+
 		<!-- preloader -->
 		<div id="preloadshow" class="hidden" style="background-color: rgb(55 65 81 / 0.5);position:fixed; top:0; bottom:0; left:0;right:0;z-index:999999">
 			<div class="loader_wrap"><span class="loader"></span></div>

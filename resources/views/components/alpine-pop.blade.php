@@ -11,7 +11,7 @@
     closable : true,
     zindex : {pop : 'z-[{{$popindex}}]', backdrop : 'z-[{{$backdorp}}]' },
 }" x-cloak >
-<template x-teleport="body">
+
     <div x-data="{
         modal : null,
         info : {},
@@ -39,7 +39,7 @@
                 const options = {
                     placement: 'center-center',
                     backdrop: 'dynamic',
-                    backdropClasses: `bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 ${zindex.backdrop}`,
+                    backdropClasses: `modal-backdrop bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 ${zindex.backdrop}`,
                     closable: closable,
                     onHide: () => {
                         this.modalshow = false
@@ -52,6 +52,12 @@
                 this.modal = new Modal($targetEl, options);
                 this.modal.show();              
             }else this.modal.show();
+        },
+        removeElementsByClass(className) {
+            let elements = document.getElementsByClassName(className);
+            while(elements.length > 0) {
+                elements[0].parentNode.removeChild(elements[0]);
+            }
         },
         init(){
             window.addEventListener('toAlpine', event => {
@@ -93,5 +99,5 @@
             </div>
         </div>
     </div>
-</template>
+
 </div>
