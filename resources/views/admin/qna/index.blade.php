@@ -10,5 +10,5 @@
     <div class="bg-white rounded p-2">
         @include('admin.qna.list')
     </div>
-    @include( 'admin.qna.create_pop')
+
 </x-admin-layout>

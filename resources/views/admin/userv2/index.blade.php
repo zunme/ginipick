@@ -66,6 +66,5 @@
             </x-admin.scroll-table>
         </x-alpine.pagenate-list>
     </div>
-    @include('admin.userv2.create_pop')
-    @include('admin.userv2.info_pop')
+
 </x-admin-layout>

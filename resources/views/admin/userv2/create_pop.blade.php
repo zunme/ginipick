@@ -4,7 +4,7 @@
     closable : true,
     zindex : {pop : 'z-[41]', backdrop : 'z-[40]' },
 }" x-cloak >
-<template x-teleport="body">
+
     <div x-data="{
         modal : null,
         list : [],
@@ -142,5 +142,5 @@
             </div>
         </div>
     </div>
-</template>
+
 </div>

@@ -127,6 +127,7 @@
     @persist('poparea')
       @include('admin.userv2.create_pop')
       @include('admin.userv2.info_pop')
+      @include( 'admin.qna.create_pop')
     @endpersist
     <!-- /pop -->
 
