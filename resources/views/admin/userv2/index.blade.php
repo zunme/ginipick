@@ -4,7 +4,7 @@
             <div class="font-semibold text-lg text-gray-800 leading-tight">
                 {{ __('회원 리스트') }}
             </div>
-            <span class="w-6 h-6 bg-red-500 rounded-full cursor-pointer text-lg flex justify-center items-center text-white shadow pt-1" @click="eventToAlpine( {type:'crete_user_pop'} )">+</span>
+            <span class="w-6 h-6 bg-red-500 rounded-full cursor-pointer text-lg flex justify-center items-center text-white shadow pt-1" @click="globalevent( {e_name:'user_create_pop_open'} )">+</span>
         </div>
     </x-slot>
     <div class="bg-white rounded p-2">
@@ -38,7 +38,8 @@
                             </x-admin.td-b>
                             <x-admin.td-b x-text="row.userid" 
                                 class="text-blue-600 cursor-pointer"
-                                @click="eventToAlpine( {type:'userinfopop' ,user_id: row.id } )"
+                                @click="globalevent( {e_name:'userinfopop_open',user_id: row.id} )"
+                                
                                 >
                             </x-admin.td-b>
                             <x-admin.td-b x-text="row.name"></x-admin.td-b>
@@ -66,5 +67,5 @@
             </x-admin.scroll-table>
         </x-alpine.pagenate-list>
     </div>
-
+    @include('admin.userv2.create_pop')
 </x-admin-layout>

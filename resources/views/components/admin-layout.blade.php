@@ -66,9 +66,8 @@
 
 		<!-- pop -->
     @persist('poparea')
-      @include('admin.userv2.create_pop')
+     <div id="persistarea"></div>
       @include('admin.userv2.info_pop')
-      @include( 'admin.qna.create_pop')
 
       <div id="daumlayer" class="!border-1" style="display:none;position:fixed;overflow:hidden;z-index:10000;-webkit-overflow-scrolling:touch;">
         <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaum()" alt="닫기 버튼">
@@ -110,12 +109,18 @@
 					toast(event)
 				});    
 			});
+      function globalevent(obj){
+        if( typeof obj.e_name =='undefined') return 
+        let name = obj.e_name
+        delete obj['e_anme']
+        window.dispatchEvent(new CustomEvent( name, {detail:obj}));
+      }
 		</script>
     @if (isset($scripts))
       {{ $scripts }}
     @endif
 
-    
+
 		@livewire('notifications')
 		    <!--
 			new FilamentNotification()

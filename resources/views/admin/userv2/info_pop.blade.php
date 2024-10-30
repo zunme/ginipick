@@ -1,4 +1,4 @@
-<x-alpine-pop popid="userinfopop" title="유저정보" maxwidth='max-w-xl'>
+<x-alpine-pop-v2 tableid="userinfopop" title="유저정보" maxwidth='max-w-xl'>
     <x-slot name="datainit">
         memos : [],
         datainit(){
