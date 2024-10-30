@@ -32,13 +32,13 @@
     <div class="min-h-screen bg-gray-100"
 				@include('layouts.admin.mainalpine')
 			 >
-       
+       @persist('navheader')
 			<x-admin.nav-header>
 				@if(isset($navheader))
 				{{ $navheader }}
 				@endif
 			</x-admin.nav-header>
-      
+      @endpersist
 			<div class="flex overflow-hidden bg-white pt-16">
         @persist('navbararea')
           <livewire:admin.sidemenu />
