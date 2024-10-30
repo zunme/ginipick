@@ -93,9 +93,6 @@
                                 </template>
                             </li>
                         </template>
-                        @for( $i=0; $i < 1 ; $i ++)
-                        <li>123123</li>
-                        @endfor
                     </ul>
                 </nav>
             </div>
