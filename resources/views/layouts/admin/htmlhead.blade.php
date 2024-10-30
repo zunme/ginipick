@@ -16,7 +16,5 @@
         @livewireStyles
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/default.js'])
 
-		<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
         <link type="text/css" href="/css/admin.css?ver=11111111111112" rel="stylesheet">
         

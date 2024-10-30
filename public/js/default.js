@@ -86,6 +86,27 @@ function initDaumLayerPosition(){
     daum_element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
     daum_element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
 }
+
+window.toast = function(payload){
+    Toastify({
+      text: payload.title,
+      duration: payload.timeout ?? 3000,
+      //destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      
+      style: {
+        background: "#666",
+        color : "#fff"
+      },
+      
+      onClick: function(){} // Callback after click
+    }).showToast();
+}
+
 function syntaxHighlight(obj) {
     if( !obj ) return '';
     json = JSON.stringify(obj, undefined, 4);
