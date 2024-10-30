@@ -8,11 +8,7 @@
             changeRoute(menu ){
                 this.current_id = menu.id
                 this.current_parent_id = menu.parent_id
-                console.log( this.current_id, this.current_parent_id)
             },
-            init( ){
-                console.log( this.menus)
-            }
        }"
        x-cloak
 	   @mouseover="show_menu=true"
