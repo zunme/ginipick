@@ -14,6 +14,7 @@
       <link type="text/css" href="/fonts/appleneo.css" rel="stylesheet">
 
       <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" />
+      <tallstackui:script /> 
       @livewireStyles
       @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/default.js'])
 

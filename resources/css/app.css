@@ -56,4 +56,8 @@
     .fi-color-success{
       @apply text-green-600;
     }
+    *,
+    *:hover {
+        scrollbar-color: auto;
+    }
   

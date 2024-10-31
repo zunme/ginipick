@@ -55,7 +55,7 @@
                             
                             <x-admin.td-b x-text="row.personality=='C'?'법인':'개인'"></x-admin.td-b>
                             <x-admin.td-b>
-                                <div @click="eventToAlpine( {type:'userinfopop' ,user_id: row.id } )" class="cursor-pointer text-blue-400">
+                                <div @click="globalevent( {e_name:'userinfopop_open',user_id: row.id} )" class="cursor-pointer text-blue-400">
                                     <i class="fa-solid fa-comment" x-show="row.memos && row.memos.length > 0"></i>
                                     <i class="fa-solid fa-comment-slash" x-show="!row.memos || row.memos.length < 1"></i>
                                 </div>
